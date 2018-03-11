@@ -4,8 +4,8 @@
 # Author   : QiZhen
 # Date     : 2018/03/09
 
-jumpserver="223.252.216.168"
-host="10.200.170.140"
+jumpserver="223.252.xxx.xxx"
+host="10.200.xxx.xxx"
 
 #自动登录
 function AutoLogin(){
