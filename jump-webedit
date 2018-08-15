@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Function : 使用except无需输入指令自动登录跳板机
+# Author   : QiZhen
+# Date     : 2018/08/15
+
+jumpserver="223.252.xxx"
+host="10.200.134.xxx"
+username="xxx"
+
+#自动登录
+function AutoLogin(){
+   command="
+        expect {
+                \"choice>\" {send \"1\n\"; exp_continue;}
+                \"user>\" {send \"webedit\n\"; exp_continue;}
+                \"host>\" {send \"${host}\n\"; exp_continue;}
+                \"Last*\" {  send_user \"\n成功登录【跳板机】\n\";}
+        }
+       interact
+   ";
+   expect -c "
+	spawn ssh  -l ${username} -p 1046 ${jumpserver} -A 
+	${command}
+   "
+   echo "您已退出【跳板机】"
+}
+
+# 程序入口
+AutoLogin
