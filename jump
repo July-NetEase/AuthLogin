@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Function : 使用except无需输入指令自动登录跳板机
+# Function : 使用expect无需输入指令自动登录跳板机
 # Author   : QiZhen
 # Date     : 2018/03/09
 

@@ -20,3 +20,6 @@ jump
 Linux下：yum install expect 
 Mac下：brew install expect
 ```
+
+用户反馈:
+1. In my case, when I use expect login my remote machine, rz/sz failed. But login without expect, rz/sz succeed.
